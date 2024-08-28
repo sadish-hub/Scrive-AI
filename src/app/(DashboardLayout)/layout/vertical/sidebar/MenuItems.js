@@ -24,7 +24,6 @@ const Menuitems = [
     title: 'Dashboard',
     icon: IconAperture,
     href: '/',
-    chip: 'New',
     chipColor: 'secondary',
   },
   {

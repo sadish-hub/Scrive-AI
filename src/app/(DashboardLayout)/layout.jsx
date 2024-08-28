@@ -33,6 +33,7 @@ export default function RootLayout({ children }) {
   const customizer = useSelector((state) => state.customizer);
   const theme = useTheme();
   const { data: session } = useSession()
+  console.log({session});
   if (session) {
     return (
       <MainWrapper>
@@ -62,7 +63,7 @@ export default function RootLayout({ children }) {
           {customizer.isHorizontal ? <Navigation /> : ""}
           <Container
             sx={{
-              maxWidth: !customizer.isLayout === "boxed" ? "lg" : "100%!important",
+              maxWidth: customizer.isLayout === "boxed" ? "lg" : "100%!important",
             }}
           >
             {/* ------------------------------------------- */}
@@ -87,6 +88,7 @@ export default function RootLayout({ children }) {
   return (
     <>
       {redirect('/auth/auth1/login')}
+      {/* {redirect('/documents/detail/1')} */}
     </>
   )
 }
