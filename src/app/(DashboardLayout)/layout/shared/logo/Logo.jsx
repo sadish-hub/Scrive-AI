@@ -2,6 +2,7 @@ import { useSelector } from 'react-redux';
 import Link from "next/link";
 import { styled } from "@mui/material/styles";
 import Image from "next/image";
+import { Typography } from '@mui/material';
 
 const Logo = () => {
   const customizer = useSelector((state) => state.customizer);
@@ -23,15 +24,9 @@ const Logo = () => {
             width={174}
             priority
           />
-        ) : (
-          <Image
-            src={"/images/logos/dark-logo.svg"}
-            alt="logo"
-            height={customizer.TopbarHeight}
-            width={174}
-            priority
-          />
-        )}
+        ) : 
+        <Typography variant="h4">Logo</Typography>
+      }
       </LinkStyled>
     );
   }
