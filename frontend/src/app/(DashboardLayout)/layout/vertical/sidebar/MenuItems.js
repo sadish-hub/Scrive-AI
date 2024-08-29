@@ -34,7 +34,13 @@ const Menuitems = [
     children: [
       {
         id: uniqueId(),
-        title: 'Detail',
+        title: 'All Documents',
+        icon: IconPoint,
+        href: '/documents/',
+      },
+      {
+        id: uniqueId(),
+        title: 'Chat with Documents',
         icon: IconPoint,
         href: '/documents/detail/1',
       },
