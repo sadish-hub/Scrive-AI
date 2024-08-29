@@ -11,8 +11,13 @@ import PageContainer from '@/app/components/container/PageContainer';
 
 import ProductDesc from '@/app/components/documents/productDetail/ProductDesc';
 import ProductRelated from '@/app/components/documents/productDetail/ProductRelated';
-import ChildCard from '@/app/components/shared/ChildCard';
+import AppCard from '@/app/components/shared/AppCard';
 import ProductDetail from '@/app/components/documents/productDetail/ProductDetail';
+import ChatContent from '@/app/components/documents/productDetail/ChatContent';
+import ChatMsgSent from '@/app/components/documents/productDetail/ChatMsgSent';
+import { useState } from 'react';
+import { Box, Divider } from '@mui/material';
+import ChatSidebar from '@/app/components/documents/productDetail/ChatSidebar';
 
 const BCrumb = [
   {
@@ -20,8 +25,8 @@ const BCrumb = [
     title: 'Home',
   },
   {
-    title: 'Shop',
-    to: '/apps/ecommerce/shop',
+    title: 'documents',
+    to: '/documents',
   },
   {
     title: 'detail',
@@ -30,37 +35,27 @@ const BCrumb = [
 
 const EcommerceDetail = () => {
   console.log('Adhoc');
+  const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   return (
     <PageContainer
       title="Documents Detail"
       description="this is eCommerce Detail"
     >
       {/* breadcrumb */}
-      <Breadcrumb title="Product Detail" items={BCrumb} />
-      <Grid
-        container
-        spacing={3}
-        sx={{ maxWidth: { lg: '1055px', xl: '1200px' } }}
-      >
-        <Grid item xs={12} sm={12} lg={12}>
-          <ChildCard>
-            {/* ------------------------------------------- */}
-            {/* Carousel */}
-            {/* ------------------------------------------- */}
-            <Grid container spacing={3}>
-              <Grid item xs={12} sm={12} lg={6}>
-                <ProductDetail />
-              </Grid>
-            </Grid>
-          </ChildCard>
-        </Grid>
-        <Grid item xs={12} sm={12} lg={12}>
-          <ProductDesc />
-        </Grid>
-        <Grid item xs={12} sm={12} lg={12}>
-          <ProductRelated />
-        </Grid>
-      </Grid>
+      <Breadcrumb title="Chat with your contract & document" items={BCrumb} />
+      <AppCard>
+      <ChatSidebar
+          isMobileSidebarOpen={isMobileSidebarOpen}
+          onSidebarClose={() => setMobileSidebarOpen(false)}
+        />
+        <Box flexGrow={1}>
+          <ChatContent toggleChatSidebar={() => setMobileSidebarOpen(true)} />
+          <Divider />
+          <ChatMsgSent />
+        </Box>
+      </AppCard>
+
+     
     </PageContainer>
   );
 };

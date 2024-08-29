@@ -10,7 +10,7 @@ import Tab from '@mui/material/Tab';
 import Tabs from '@mui/material/Tabs';
 import Typography from '@mui/material/Typography';
 import { IconPencil } from '@tabler/icons-react';
-import ChildCard from '../../shared/ChildCard';
+import ChildCard from '../../shared/AppCard';
 
 // progress
 function ProgressBar({ like, star, value, ...others }) {

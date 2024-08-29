@@ -23,6 +23,12 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.js", "**/*.js", "**/*.jsx", ".next/types/**/*.js", "src/store/apps/documents/DocumentsSlice.tsx"],
+  "include": [
+    "next-env.d.js",
+    "**/*.js",
+    "**/*.jsx",
+    ".next/types/**/*.js",
+    "src/store/apps/documents/DocumentsSlice.tsx"
+  ],
   "exclude": ["node_modules"]
 }
