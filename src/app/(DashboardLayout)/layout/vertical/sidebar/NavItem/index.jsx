@@ -2,7 +2,6 @@ import React from 'react';
 import Link from 'next/link';
 import PropTypes from 'prop-types';
 
-
 // mui imports
 import Chip from '@mui/material/Chip';
 import List from '@mui/material/List';
@@ -17,14 +16,24 @@ import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
 import { AppState } from '@/store/store';
 
-export default function NavItem({ item, level, pathDirect, hideMenu, onClick }) {
+export default function NavItem({
+  item,
+  level,
+  pathDirect,
+  hideMenu,
+  onClick,
+}) {
   const lgDown = useMediaQuery((theme) => theme.breakpoints.down('lg'));
   const customizer = useSelector((state) => state.customizer);
   const Icon = item?.icon;
   const theme = useTheme();
   const { t } = useTranslation();
   const itemIcon =
-    level > 1 ? <Icon stroke={1.5} size="1rem" /> : <Icon stroke={1.5} size="1.3rem" />;
+    level > 1 ? (
+      <Icon stroke={1.5} size="1rem" />
+    ) : (
+      <Icon stroke={1.5} size="1.3rem" />
+    );
 
   const ListItemStyled = styled(ListItemButton)(() => ({
     whiteSpace: 'nowrap',
@@ -83,7 +92,9 @@ export default function NavItem({ item, level, pathDirect, hideMenu, onClick }) 
             {hideMenu ? '' : <>{t(`${item?.title}`)}</>}
             <br />
             {item?.subtitle ? (
-              <Typography variant="caption">{hideMenu ? '' : item?.subtitle}</Typography>
+              <Typography variant="caption">
+                {hideMenu ? '' : item?.subtitle}
+              </Typography>
             ) : (
               ''
             )}

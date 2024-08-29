@@ -1,5 +1,5 @@
 import Menuitems from './MenuItems';
-import { usePathname } from "next/navigation";
+import { usePathname } from 'next/navigation';
 import Box from '@mui/material/Box';
 import List from '@mui/material/List';
 import useMediaQuery from '@mui/material/useMediaQuery';
@@ -9,14 +9,15 @@ import NavCollapse from './NavCollapse';
 import NavGroup from './NavGroup/NavGroup';
 import { toggleMobileSidebar } from '@/store/customizer/CustomizerSlice';
 
-
 const SidebarItems = () => {
-  const  pathname  = usePathname();
+  const pathname = usePathname();
   const pathDirect = pathname;
   const pathWithoutLastPart = pathname.slice(0, pathname.lastIndexOf('/'));
   const customizer = useSelector((state) => state.customizer);
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
-  const hideMenu = lgUp ? customizer.isCollapse && !customizer.isSidebarHover : '';
+  const hideMenu = lgUp
+    ? customizer.isCollapse && !customizer.isSidebarHover
+    : '';
   const dispatch = useDispatch();
   return (
     <Box sx={{ px: 3 }}>
@@ -24,7 +25,9 @@ const SidebarItems = () => {
         {Menuitems.map((item) => {
           // {/********SubHeader**********/}
           if (item.subheader) {
-            return <NavGroup item={item} hideMenu={hideMenu} key={item.subheader} />;
+            return (
+              <NavGroup item={item} hideMenu={hideMenu} key={item.subheader} />
+            );
 
             // {/********If Sub Menu**********/}
             /* eslint no-else-return: "off" */
@@ -44,7 +47,13 @@ const SidebarItems = () => {
             // {/********If Sub No Menu**********/}
           } else {
             return (
-              <NavItem item={item} key={item.id} pathDirect={pathDirect} hideMenu={hideMenu} onClick={() => dispatch(toggleMobileSidebar())} />
+              <NavItem
+                item={item}
+                key={item.id}
+                pathDirect={pathDirect}
+                hideMenu={hideMenu}
+                onClick={() => dispatch(toggleMobileSidebar())}
+              />
             );
           }
         })}

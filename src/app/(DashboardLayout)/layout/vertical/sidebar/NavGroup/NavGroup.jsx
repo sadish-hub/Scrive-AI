@@ -5,7 +5,6 @@ import { styled } from '@mui/material/styles';
 import { IconDots } from '@tabler/icons-react';
 import React from 'react';
 
-
 const NavGroup = ({ item, hideMenu }) => {
   const ListSubheaderStyle = styled((props) => (
     <ListSubheader disableSticky {...props} />
@@ -21,7 +20,9 @@ const NavGroup = ({ item, hideMenu }) => {
   }));
 
   return (
-    <ListSubheaderStyle>{hideMenu ? <IconDots size="14" /> : item?.subheader}</ListSubheaderStyle>
+    <ListSubheaderStyle>
+      {hideMenu ? <IconDots size="14" /> : item?.subheader}
+    </ListSubheaderStyle>
   );
 };
 
@@ -29,6 +30,5 @@ NavGroup.propTypes = {
   item: PropTypes.object,
   hideMenu: PropTypes.any,
 };
-
 
 export default NavGroup;

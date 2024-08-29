@@ -1,36 +1,36 @@
-import React from "react";
-import Avatar from "@mui/material/Avatar";
-import IconButton from "@mui/material/IconButton";
-import Menu from "@mui/material/Menu";
-import MenuItem from "@mui/material/MenuItem";
-import Typography from "@mui/material/Typography";
-import { useSelector, useDispatch } from "react-redux";
-import { setLanguage } from "@/store/customizer/CustomizerSlice";
-import { Stack } from "@mui/system";
-import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
+import React from 'react';
+import Avatar from '@mui/material/Avatar';
+import IconButton from '@mui/material/IconButton';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import Typography from '@mui/material/Typography';
+import { useSelector, useDispatch } from 'react-redux';
+import { setLanguage } from '@/store/customizer/CustomizerSlice';
+import { Stack } from '@mui/system';
+import { useTranslation } from 'react-i18next';
+import { useEffect } from 'react';
 
 const Languages = [
   {
-    flagname: "English (UK)",
-    icon: "/images/flag/icon-flag-en.svg",
-    value: "en",
+    flagname: 'English (UK)',
+    icon: '/images/flag/icon-flag-en.svg',
+    value: 'en',
   },
   {
-    flagname: "中国人 (Chinese)",
-    icon: "/images/flag/icon-flag-cn.svg",
-    value: "ch",
+    flagname: '中国人 (Chinese)',
+    icon: '/images/flag/icon-flag-cn.svg',
+    value: 'ch',
   },
   {
-    flagname: "français (French)",
-    icon: "/images/flag/icon-flag-fr.svg",
-    value: "fr",
+    flagname: 'français (French)',
+    icon: '/images/flag/icon-flag-fr.svg',
+    value: 'fr',
   },
 
   {
-    flagname: "عربي (Arabic)",
-    icon: "/images/flag/icon-flag-sa.svg",
-    value: "ar",
+    flagname: 'عربي (Arabic)',
+    icon: '/images/flag/icon-flag-sa.svg',
+    value: 'ar',
   },
 ];
 
@@ -59,8 +59,8 @@ const Language = () => {
       <IconButton
         aria-label="more"
         id="long-button"
-        aria-controls={open ? "long-menu" : undefined}
-        aria-expanded={open ? "true" : undefined}
+        aria-controls={open ? 'long-menu' : undefined}
+        aria-expanded={open ? 'true' : undefined}
         aria-haspopup="true"
         onClick={handleClick}
       >
@@ -76,8 +76,8 @@ const Language = () => {
         open={open}
         onClose={handleClose}
         sx={{
-          "& .MuiMenu-paper": {
-            width: "200px",
+          '& .MuiMenu-paper': {
+            width: '200px',
           },
         }}
       >

@@ -1,22 +1,22 @@
-import React from "react";
+import React from 'react';
 import PropTypes from 'prop-types';
-import { useTheme } from "@mui/material/styles";
-import { usePathname } from "next/navigation";
+import { useTheme } from '@mui/material/styles';
+import { usePathname } from 'next/navigation';
 
 // mui imports
-import Box from "@mui/material/Box";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
-import { styled } from "@mui/material/styles";
+import Box from '@mui/material/Box';
+import ListItemButton from '@mui/material/ListItemButton';
+import ListItemIcon from '@mui/material/ListItemIcon';
+import ListItemText from '@mui/material/ListItemText';
+import { styled } from '@mui/material/styles';
 
 import { useSelector } from 'react-redux';
 
 // custom imports
-import NavItem from "../NavItem/NavItem";
+import NavItem from '../NavItem/NavItem';
 
 // plugins
-import { IconChevronDown } from "@tabler/icons-react";
+import { IconChevronDown } from '@tabler/icons-react';
 
 // FC Component For Dropdown Menu
 const NavCollapse = ({
@@ -24,7 +24,8 @@ const NavCollapse = ({
   level,
   pathWithoutLastPart,
   pathDirect,
-  hideMenu, onClick
+  hideMenu,
+  onClick,
 }) => {
   const Icon = menu.icon;
   const theme = useTheme();
@@ -48,36 +49,36 @@ const NavCollapse = ({
   }, [pathname, menu.children]);
 
   const ListItemStyled = styled(ListItemButton)(() => ({
-    width: "auto",
-    padding: "5px 10px",
-    position: "relative",
-    flexGrow: "unset",
-    gap: "10px",
+    width: 'auto',
+    padding: '5px 10px',
+    position: 'relative',
+    flexGrow: 'unset',
+    gap: '10px',
     borderRadius: `${customizer.borderRadius}px`,
-    whiteSpace: "nowrap",
+    whiteSpace: 'nowrap',
     color:
       open || pathname.includes(menu.href) || level < 1
-        ? "white"
+        ? 'white'
         : theme.palette.text.secondary,
     backgroundColor:
-      open || pathname.includes(menu.href) ? theme.palette.primary.main : "",
+      open || pathname.includes(menu.href) ? theme.palette.primary.main : '',
 
-    "&:hover": {
+    '&:hover': {
       backgroundColor:
         open || pathname.includes(menu.href)
           ? theme.palette.primary.main
           : theme.palette.primary.light,
     },
-    "&:hover > .SubNav": { display: "block" },
+    '&:hover > .SubNav': { display: 'block' },
   }));
 
   const ListSubMenu = styled(Box)(() => ({
-    display: "none",
-    position: "absolute",
-    top: level > 1 ? `0px` : "35px",
-    left: level > 1 ? `${level + 228}px` : "0px",
-    padding: "10px",
-    width: "250px",
+    display: 'none',
+    position: 'absolute',
+    top: level > 1 ? `0px` : '35px',
+    left: level > 1 ? `${level + 228}px` : '0px',
+    padding: '10px',
+    width: '250px',
     color: theme.palette.text.primary,
     boxShadow: theme.shadows[8],
     backgroundColor: theme.palette.background.paper,
@@ -120,22 +121,22 @@ const NavCollapse = ({
       <ListItemStyled
         {...listItemProps}
         selected={pathWithoutLastPart === menu.href}
-        className={open ? "selected" : ""}
+        className={open ? 'selected' : ''}
       >
         <ListItemIcon
           sx={{
-            minWidth: "auto",
-            p: "3px 0",
-            color: "inherit",
+            minWidth: 'auto',
+            p: '3px 0',
+            color: 'inherit',
           }}
         >
           {menuIcon}
         </ListItemIcon>
-        <ListItemText color="inherit" sx={{ mr: "auto" }}>
+        <ListItemText color="inherit" sx={{ mr: 'auto' }}>
           {menu.title}
         </ListItemText>
         <IconChevronDown size="1rem" />
-        <ListSubMenu component={"ul"} className="SubNav">
+        <ListSubMenu component={'ul'} className="SubNav">
           {submenus}
         </ListSubMenu>
       </ListItemStyled>

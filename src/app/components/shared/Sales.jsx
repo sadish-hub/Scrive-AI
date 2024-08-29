@@ -1,15 +1,11 @@
-import React from "react";
-import dynamic from "next/dynamic";
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
-import { useTheme } from "@mui/material/styles";
-import { Box, Typography } from "@mui/material";
+import React from 'react';
+import dynamic from 'next/dynamic';
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
+import { useTheme } from '@mui/material/styles';
+import { Box, Typography } from '@mui/material';
 
-
-
-import SkeletonExpenceCard from "@/app/components/sketeton/ExpenseCard";
-import DashboardCard from "./DashboardCard";
-
-
+import SkeletonExpenceCard from '@/app/components/sketeton/ExpenseCard';
+import DashboardCard from './DashboardCard';
 
 const Sales = ({ isLoading }) => {
   // chart color
@@ -20,28 +16,28 @@ const Sales = ({ isLoading }) => {
   // chart
   const optionscolumnchart = {
     chart: {
-      type: "bar",
+      type: 'bar',
       fontFamily: "'Montserrat', sans-serif;",
-      foreColor: "#adb0bb",
+      foreColor: '#adb0bb',
       toolbar: {
         show: false,
       },
       height: 90,
-      width: "100%",
+      width: '100%',
       stacked: true,
-      stackType: "100%",
+      stackType: '100%',
       sparkline: {
         enabled: true,
       },
     },
-    colors: [primary, secondary, "#EAEFF4"],
+    colors: [primary, secondary, '#EAEFF4'],
     plotOptions: {
       bar: {
         horizontal: false,
-        columnWidth: "50%",
+        columnWidth: '50%',
         borderRadius: [3],
-        borderRadiusApplication: "around",
-        borderRadiusWhenStacked: "around",
+        borderRadiusApplication: 'around',
+        borderRadiusWhenStacked: 'around',
       },
     },
     dataLabels: {
@@ -50,13 +46,13 @@ const Sales = ({ isLoading }) => {
     stroke: {
       show: false,
       width: 1,
-      colors: ["rgba(0,0,0,0.01)"],
+      colors: ['rgba(0,0,0,0.01)'],
     },
     fill: {
       opacity: 1,
     },
     tooltip: {
-      theme: theme.palette.mode === "dark" ? "dark" : "light",
+      theme: theme.palette.mode === 'dark' ? 'dark' : 'light',
       fillSeriesColor: false,
       x: {
         show: false,
@@ -69,45 +65,44 @@ const Sales = ({ isLoading }) => {
   const seriescolumnchart = [
     {
       color: primary,
-      name: "",
+      name: '',
       data: [25, 35, 20, 25, 40, 25],
     },
     {
       color: secondary,
-      name: "",
+      name: '',
       data: [35, 40, 20, 35, 40, 35],
     },
     {
-      color: "#EAEFF4",
-      name: "",
+      color: '#EAEFF4',
+      name: '',
       data: [40, 25, 60, 40, 20, 40],
     },
   ];
 
   return (
     <>
-      {
-        isLoading ? (
-          <SkeletonExpenceCard />
-        ) : (
-          <DashboardCard>
-            <>
-              <Typography variant="h4">$65,432</Typography>
-              <Typography variant="subtitle2" color="textSecondary" mb={3}>
-                Sales
-              </Typography>
-              <Box className="rounded-bars" height="90px">
-                <Chart
-                  options={optionscolumnchart}
-                  series={seriescolumnchart}
-                  type="bar"
-                  height="90px" width={"100%"}
-                />
-              </Box>
-            </>
-          </DashboardCard>
-        )
-      }
+      {isLoading ? (
+        <SkeletonExpenceCard />
+      ) : (
+        <DashboardCard>
+          <>
+            <Typography variant="h4">$65,432</Typography>
+            <Typography variant="subtitle2" color="textSecondary" mb={3}>
+              Sales
+            </Typography>
+            <Box className="rounded-bars" height="90px">
+              <Chart
+                options={optionscolumnchart}
+                series={seriescolumnchart}
+                type="bar"
+                height="90px"
+                width={'100%'}
+              />
+            </Box>
+          </>
+        </DashboardCard>
+      )}
     </>
   );
 };

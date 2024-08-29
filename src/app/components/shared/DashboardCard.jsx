@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { useTheme } from '@mui/material/styles';
 import { Card, CardContent, Typography, Stack, Box } from '@mui/material';
 import { useSelector } from 'react-redux';
@@ -21,7 +21,10 @@ const DashboardCard = ({
 
   return (
     <Card
-      sx={{ padding: 0, border: !customizer.isCardShadow ? `1px solid ${borderColor}` : 'none' }}
+      sx={{
+        padding: 0,
+        border: !customizer.isCardShadow ? `1px solid ${borderColor}` : 'none',
+      }}
       elevation={customizer.isCardShadow ? 9 : 0}
       variant={!customizer.isCardShadow ? 'outlined' : undefined}
     >

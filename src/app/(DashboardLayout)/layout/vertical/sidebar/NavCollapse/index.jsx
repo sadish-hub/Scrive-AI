@@ -37,7 +37,11 @@ export default function NavCollapse({
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
   const menuIcon =
-    level > 1 ? <Icon stroke={1.5} size="1rem" /> : <Icon stroke={1.5} size="1.3rem" />;
+    level > 1 ? (
+      <Icon stroke={1.5} size="1rem" />
+    ) : (
+      <Icon stroke={1.5} size="1.3rem" />
+    );
 
   const handleClick = () => {
     setOpen(!open);
@@ -64,14 +68,17 @@ export default function NavCollapse({
         pathname.includes(menu.href) || open
           ? theme.palette.primary.main
           : theme.palette.primary.light,
-      color: pathname.includes(menu.href) || open ? 'white' : theme.palette.primary.main,
+      color:
+        pathname.includes(menu.href) || open
+          ? 'white'
+          : theme.palette.primary.main,
     },
     color:
       open && level < 2
         ? 'white'
         : `inherit` && level > 1 && open
-        ? theme.palette.primary.main
-        : theme.palette.text.secondary,
+          ? theme.palette.primary.main
+          : theme.palette.text.secondary,
     borderRadius: `${customizer.borderRadius}px`,
   }));
 
@@ -119,8 +126,14 @@ export default function NavCollapse({
         >
           {menuIcon}
         </ListItemIcon>
-        <ListItemText color="inherit">{hideMenu ? '' : <>{t(`${menu.title}`)}</>}</ListItemText>
-        {!open ? <IconChevronDown size="1rem" /> : <IconChevronUp size="1rem" />}
+        <ListItemText color="inherit">
+          {hideMenu ? '' : <>{t(`${menu.title}`)}</>}
+        </ListItemText>
+        {!open ? (
+          <IconChevronDown size="1rem" />
+        ) : (
+          <IconChevronUp size="1rem" />
+        )}
       </ListItemStyled>
       <Collapse in={open} timeout="auto">
         {submenus}

@@ -2,7 +2,7 @@ import axios from '../../../utils/axios';
 import { filter, map } from 'lodash';
 import { createSlice } from '@reduxjs/toolkit';
 import { AppDispatch } from '../../store';
-import {ProductsData} from "@/app/api/documents/ProductsData";
+import { ProductsData } from '@/app/api/documents/ProductsData';
 
 const API_URL = '/api/data/documents/ProductsData';
 
@@ -132,7 +132,10 @@ export const DocumentSlice = createSlice({
 
     // delete Cart
     deleteCart(state: StateType, action) {
-      const updateCart = filter(state.cart, (item) => item.id !== action.payload);
+      const updateCart = filter(
+        state.cart,
+        (item) => item.id !== action.payload
+      );
       state.cart = updateCart;
     },
   },
@@ -154,8 +157,8 @@ export const {
 } = DocumentSlice.actions;
 
 export const fetchProducts = () => async (dispatch: AppDispatch) => {
-  console.log("fetch Products", API_URL, ProductsData)
-  
+  console.log('fetch Products', API_URL, ProductsData);
+
   try {
     // const response = await axios.get(`${API_URL}`);
     // console.log({response})

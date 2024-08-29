@@ -1,10 +1,10 @@
-import { Montserrat } from "next/font/google";
+import { Montserrat } from 'next/font/google';
 
 export const plus = Montserrat({
-  weight: ["300", "400", "500", "600", "700"],
-  subsets: ["latin"],
-  display: "swap",
-  fallback: ["Roboto", "Arial", "sans-serif"],
+  weight: ['300', '400', '500', '600', '700'],
+  subsets: ['latin'],
+  display: 'swap',
+  fallback: ['Roboto', 'Arial', 'sans-serif'],
 });
 
 const typography = {
@@ -65,7 +65,6 @@ const typography = {
 };
 
 export default typography;
-
 
 // --site-primary-100-color: #e8f3fc;
 // --site-primary-200-color: #d2e7f9;

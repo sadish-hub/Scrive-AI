@@ -8,11 +8,10 @@ import IconButton from '@mui/material/IconButton';
 import Menu from '@mui/material/Menu';
 import Typography from '@mui/material/Typography';
 import * as dropdownData from './data';
-import { useSession, signOut } from "next-auth/react"
+import { useSession, signOut } from 'next-auth/react';
 import { IconMail } from '@tabler/icons-react';
 import { Stack } from '@mui/system';
 import Image from 'next/image';
-
 
 const Profile = () => {
   const [anchorEl2, setAnchorEl2] = useState(null);
@@ -22,7 +21,7 @@ const Profile = () => {
   const handleClose2 = () => {
     setAnchorEl2(null);
   };
-  const { data: session } = useSession()
+  const { data: session } = useSession();
   return (
     <Box>
       <IconButton
@@ -39,7 +38,7 @@ const Profile = () => {
         onClick={handleClick2}
       >
         <Avatar
-          src={"/images/profile/user-1.jpg"}
+          src={'/images/profile/user-1.jpg'}
           alt={'ProfileImg'}
           sx={{
             width: 35,
@@ -67,9 +66,17 @@ const Profile = () => {
       >
         <Typography variant="h5">User Profile</Typography>
         <Stack direction="row" py={3} spacing={2} alignItems="center">
-          <Avatar src={"/images/profile/user-1.jpg"} alt={"ProfileImg"} sx={{ width: 95, height: 95 }} />
+          <Avatar
+            src={'/images/profile/user-1.jpg'}
+            alt={'ProfileImg'}
+            sx={{ width: 95, height: 95 }}
+          />
           <Box>
-            <Typography variant="subtitle2" color="textPrimary" fontWeight={600}>
+            <Typography
+              variant="subtitle2"
+              color="textPrimary"
+              fontWeight={600}
+            >
               {session.user.name}
             </Typography>
             <Typography variant="subtitle2" color="textSecondary">
@@ -99,7 +106,8 @@ const Profile = () => {
                     bgcolor="primary.light"
                     display="flex"
                     alignItems="center"
-                    justifyContent="center" flexShrink="0"
+                    justifyContent="center"
+                    flexShrink="0"
                   >
                     <Avatar
                       src={profile.icon}
@@ -141,7 +149,13 @@ const Profile = () => {
           </Box>
         ))}
         <Box mt={2}>
-          <Box bgcolor="primary.light" p={3} mb={3} overflow="hidden" position="relative">
+          <Box
+            bgcolor="primary.light"
+            p={3}
+            mb={3}
+            overflow="hidden"
+            position="relative"
+          >
             <Box display="flex" justifyContent="space-between">
               <Box>
                 <Typography variant="h5" mb={2}>
@@ -152,10 +166,23 @@ const Profile = () => {
                   Upgrade
                 </Button>
               </Box>
-              <Image src={"/images/backgrounds/unlimited-bg.png"} width={150} height={183} alt="unlimited" className="signup-bg" />
+              <Image
+                src={'/images/backgrounds/unlimited-bg.png'}
+                width={150}
+                height={183}
+                alt="unlimited"
+                className="signup-bg"
+              />
             </Box>
           </Box>
-          <Button href="/auth/auth1/login" variant="outlined" color="primary" component={Link} fullWidth onClick={() => signOut()}>
+          <Button
+            href="/auth/auth1/login"
+            variant="outlined"
+            color="primary"
+            component={Link}
+            fullWidth
+            onClick={() => signOut()}
+          >
             Logout
           </Button>
         </Box>
