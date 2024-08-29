@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { Card } from '@mui/material';
 import { useSelector } from 'react-redux';
 

@@ -44,7 +44,7 @@ const EcommerceDetail = () => {
       {/* breadcrumb */}
       <Breadcrumb title="Chat with your contract & document" items={BCrumb} />
       <AppCard>
-      <ChatSidebar
+        <ChatSidebar
           isMobileSidebarOpen={isMobileSidebarOpen}
           onSidebarClose={() => setMobileSidebarOpen(false)}
         />
@@ -54,8 +54,6 @@ const EcommerceDetail = () => {
           <ChatMsgSent />
         </Box>
       </AppCard>
-
-     
     </PageContainer>
   );
 };

@@ -16,10 +16,15 @@ const drawerWidth = 320;
 
 const ChatInsideSidebar = ({ isInSidebar, chat }) => {
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
-  const totalAttachment = uniq(flatten(chat?.messages.map((item) => item.attachment))).length;
+  const totalAttachment = uniq(
+    flatten(chat?.messages.map((item) => item.attachment))
+  ).length;
   const totalMedia =
-    uniq(flatten(chat?.messages.map((item) => (item?.type === 'image' ? item.msg : null)))).length -
-    1;
+    uniq(
+      flatten(
+        chat?.messages.map((item) => (item?.type === 'image' ? item.msg : null))
+      )
+    ).length - 1;
 
   const StyledStack = styled(Stack)(() => ({
     '.showOnHover': {
@@ -70,7 +75,9 @@ const ChatInsideSidebar = ({ isInSidebar, chat }) => {
               );
             })}
             <Grid item xs={12} lg={12}>
-              {totalMedia === 0 ? <Alert severity="error">No Media Found!</Alert> : null}
+              {totalMedia === 0 ? (
+                <Alert severity="error">No Media Found!</Alert>
+              ) : null}
             </Grid>
           </Grid>
 
@@ -100,7 +107,11 @@ const ChatInsideSidebar = ({ isInSidebar, chat }) => {
                           ></Avatar>
                         </Avatar>
                         <Box mr={'auto'}>
-                          <Typography variant="subtitle2" fontWeight={600} mb={1}>
+                          <Typography
+                            variant="subtitle2"
+                            fontWeight={600}
+                            mb={1}
+                          >
                             {a.file}
                           </Typography>
                           <Typography variant="body2">{a.fileSize}</Typography>
@@ -116,7 +127,9 @@ const ChatInsideSidebar = ({ isInSidebar, chat }) => {
                 </Stack>
               );
             })}
-            {totalAttachment === 0 ? <Alert severity="error">No Attachment Found!</Alert> : null}
+            {totalAttachment === 0 ? (
+              <Alert severity="error">No Attachment Found!</Alert>
+            ) : null}
           </Box>
         </Box>
       ) : null}

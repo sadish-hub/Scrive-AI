@@ -20,11 +20,31 @@ export const ChatData = [
         senderId: 1,
         type: 'text',
         attachment: [
-          { icon: '/images/chat/icon-adobe.svg', file: 'service-task.pdf', fileSize: '2MB' },
-          { icon: '/images/chat/icon-chrome.svg', file: 'homepage-design.fig', fileSize: '3MB' },
-          { icon: '/images/chat/icon-figma.svg', file: 'about-us.html', fileSize: '1KB' },
-          { icon: '/images/chat/icon-javascript.svg', file: 'work-project.zip', fileSize: '20MB' },
-          { icon: '/images/chat/icon-zip-folder.svg', file: 'custom.js', fileSize: '2MB' },
+          {
+            icon: '/images/chat/icon-adobe.svg',
+            file: 'service-task.pdf',
+            fileSize: '2MB',
+          },
+          {
+            icon: '/images/chat/icon-chrome.svg',
+            file: 'homepage-design.fig',
+            fileSize: '3MB',
+          },
+          {
+            icon: '/images/chat/icon-figma.svg',
+            file: 'about-us.html',
+            fileSize: '1KB',
+          },
+          {
+            icon: '/images/chat/icon-javascript.svg',
+            file: 'work-project.zip',
+            fileSize: '20MB',
+          },
+          {
+            icon: '/images/chat/icon-zip-folder.svg',
+            file: 'custom.js',
+            fileSize: '2MB',
+          },
         ],
         id: uniqueId(),
       },
@@ -75,10 +95,26 @@ export const ChatData = [
         senderId: uniqueId(),
         type: 'text',
         attachment: [
-          { icon: '/images/chat/icon-adobe.svg', file: 'service-task.pdf', fileSize: '2MB' },
-          { icon: '/images/chat/icon-chrome.svg', file: 'homepage-design.fig', fileSize: '3MB' },
-          { icon: '/images/chat/icon-javascript.svg', file: 'work-project.zip', fileSize: '20MB' },
-          { icon: '/images/chat/icon-zip-folder.svg', file: 'custom.js', fileSize: '2MB' },
+          {
+            icon: '/images/chat/icon-adobe.svg',
+            file: 'service-task.pdf',
+            fileSize: '2MB',
+          },
+          {
+            icon: '/images/chat/icon-chrome.svg',
+            file: 'homepage-design.fig',
+            fileSize: '3MB',
+          },
+          {
+            icon: '/images/chat/icon-javascript.svg',
+            file: 'work-project.zip',
+            fileSize: '20MB',
+          },
+          {
+            icon: '/images/chat/icon-zip-folder.svg',
+            file: 'custom.js',
+            fileSize: '2MB',
+          },
         ],
         id: uniqueId(),
       },
@@ -129,8 +165,16 @@ export const ChatData = [
         senderId: 1,
         type: 'text',
         attachment: [
-          { icon: '/images/chat/icon-adobe.svg', file: 'service-task.pdf', fileSize: '2MB' },
-          { icon: '/images/chat/icon-zip-folder.svg', file: 'custom.js', fileSize: '2MB' },
+          {
+            icon: '/images/chat/icon-adobe.svg',
+            file: 'service-task.pdf',
+            fileSize: '2MB',
+          },
+          {
+            icon: '/images/chat/icon-zip-folder.svg',
+            file: 'custom.js',
+            fileSize: '2MB',
+          },
         ],
         id: uniqueId(),
       },
@@ -182,8 +226,16 @@ export const ChatData = [
         senderId: 4,
         type: 'text',
         attachment: [
-          { icon: '/images/chat/icon-javascript.svg', file: 'work-project.zip', fileSize: '20MB' },
-          { icon: '/images/chat/icon-zip-folder.svg', file: 'custom.js', fileSize: '2MB' },
+          {
+            icon: '/images/chat/icon-javascript.svg',
+            file: 'work-project.zip',
+            fileSize: '20MB',
+          },
+          {
+            icon: '/images/chat/icon-zip-folder.svg',
+            file: 'custom.js',
+            fileSize: '2MB',
+          },
         ],
         id: uniqueId(),
       },
@@ -227,11 +279,31 @@ export const ChatData = [
         senderId: 1,
         type: 'text',
         attachment: [
-          { icon: '/images/chat/icon-adobe.svg', file: 'service-task.pdf', fileSize: '2MB' },
-          { icon: '/images/chat/icon-chrome.svg', file: 'homepage-design.fig', fileSize: '3MB' },
-          { icon: '/images/chat/icon-figma.svg', file: 'about-us.html', fileSize: '1KB' },
-          { icon: '/images/chat/icon-javascript.svg', file: 'work-project.zip', fileSize: '20MB' },
-          { icon: '/images/chat/icon-zip-folder.svg', file: 'custom.js', fileSize: '2MB' },
+          {
+            icon: '/images/chat/icon-adobe.svg',
+            file: 'service-task.pdf',
+            fileSize: '2MB',
+          },
+          {
+            icon: '/images/chat/icon-chrome.svg',
+            file: 'homepage-design.fig',
+            fileSize: '3MB',
+          },
+          {
+            icon: '/images/chat/icon-figma.svg',
+            file: 'about-us.html',
+            fileSize: '1KB',
+          },
+          {
+            icon: '/images/chat/icon-javascript.svg',
+            file: 'work-project.zip',
+            fileSize: '20MB',
+          },
+          {
+            icon: '/images/chat/icon-zip-folder.svg',
+            file: 'custom.js',
+            fileSize: '2MB',
+          },
         ],
         id: uniqueId(),
       },
@@ -282,9 +354,21 @@ export const ChatData = [
         senderId: 1,
         type: 'text',
         attachment: [
-          { icon: '/images/chat/icon-chrome.svg', file: 'homepage-design.fig', fileSize: '3MB' },
-          { icon: '/images/chat/icon-javascript.svg', file: 'work-project.zip', fileSize: '20MB' },
-          { icon: '/images/chat/icon-zip-folder.svg', file: 'custom.js', fileSize: '2MB' },
+          {
+            icon: '/images/chat/icon-chrome.svg',
+            file: 'homepage-design.fig',
+            fileSize: '3MB',
+          },
+          {
+            icon: '/images/chat/icon-javascript.svg',
+            file: 'work-project.zip',
+            fileSize: '20MB',
+          },
+          {
+            icon: '/images/chat/icon-zip-folder.svg',
+            file: 'custom.js',
+            fileSize: '2MB',
+          },
         ],
         id: uniqueId(),
       },
@@ -327,8 +411,16 @@ export const ChatData = [
         senderId: 1,
         type: 'text',
         attachment: [
-          { icon: '/images/chat/icon-adobe.svg', file: 'service-task.pdf', fileSize: '2MB' },
-          { icon: '/images/chat/icon-chrome.svg', file: 'homepage-design.fig', fileSize: '3MB' },
+          {
+            icon: '/images/chat/icon-adobe.svg',
+            file: 'service-task.pdf',
+            fileSize: '2MB',
+          },
+          {
+            icon: '/images/chat/icon-chrome.svg',
+            file: 'homepage-design.fig',
+            fileSize: '3MB',
+          },
         ],
         id: uniqueId(),
       },
@@ -372,9 +464,21 @@ export const ChatData = [
         senderId: 1,
         type: 'text',
         attachment: [
-          { icon: '/images/chat/icon-adobe.svg', file: 'service-task.pdf', fileSize: '2MB' },
-          { icon: '/images/chat/icon-javascript.svg', file: 'work-project.zip', fileSize: '20MB' },
-          { icon: '/images/chat/icon-zip-folder.svg', file: 'custom.js', fileSize: '2MB' },
+          {
+            icon: '/images/chat/icon-adobe.svg',
+            file: 'service-task.pdf',
+            fileSize: '2MB',
+          },
+          {
+            icon: '/images/chat/icon-javascript.svg',
+            file: 'work-project.zip',
+            fileSize: '20MB',
+          },
+          {
+            icon: '/images/chat/icon-zip-folder.svg',
+            file: 'custom.js',
+            fileSize: '2MB',
+          },
         ],
         id: uniqueId(),
       },
@@ -418,8 +522,16 @@ export const ChatData = [
         senderId: 1,
         type: 'text',
         attachment: [
-          { icon: '/images/chat/icon-javascript.svg', file: 'work-project.zip', fileSize: '20MB' },
-          { icon: '/images/chat/icon-zip-folder.svg', file: 'custom.js', fileSize: '2MB' },
+          {
+            icon: '/images/chat/icon-javascript.svg',
+            file: 'work-project.zip',
+            fileSize: '20MB',
+          },
+          {
+            icon: '/images/chat/icon-zip-folder.svg',
+            file: 'custom.js',
+            fileSize: '2MB',
+          },
         ],
         id: uniqueId(),
       },
@@ -471,8 +583,16 @@ export const ChatData = [
         senderId: 1,
         type: 'text',
         attachment: [
-          { icon: '/images/chat/icon-adobe.svg', file: 'service-task.pdf', fileSize: '2MB' },
-          { icon: '/images/chat/icon-zip-folder.svg', file: 'custom.js', fileSize: '2MB' },
+          {
+            icon: '/images/chat/icon-adobe.svg',
+            file: 'service-task.pdf',
+            fileSize: '2MB',
+          },
+          {
+            icon: '/images/chat/icon-zip-folder.svg',
+            file: 'custom.js',
+            fileSize: '2MB',
+          },
         ],
         id: uniqueId(),
       },

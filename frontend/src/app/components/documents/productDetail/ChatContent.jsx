@@ -10,7 +10,12 @@ import ListItemText from '@mui/material/ListItemText';
 import Stack from '@mui/material/Stack';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
-import { IconDotsVertical, IconMenu2, IconPhone, IconVideo } from '@tabler/icons-react';
+import {
+  IconDotsVertical,
+  IconMenu2,
+  IconPhone,
+  IconVideo,
+} from '@tabler/icons-react';
 import { useSelector } from 'react-redux';
 
 import { formatDistanceToNowStrict } from 'date-fns';
@@ -22,7 +27,7 @@ const ChatContent = ({ toggleChatSidebar }) => {
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
 
   const chatDetails = useSelector(
-    (state) => state.chatReducer.chats[state.chatReducer.chatContent - 1],
+    (state) => state.chatReducer.chats[state.chatReducer.chatContent - 1]
   );
 
   return (
@@ -49,10 +54,10 @@ const ChatContent = ({ toggleChatSidebar }) => {
                       chatDetails.status === 'online'
                         ? 'success'
                         : chatDetails.status === 'busy'
-                        ? 'error'
-                        : chatDetails.status === 'away'
-                        ? 'warning'
-                        : 'secondary'
+                          ? 'error'
+                          : chatDetails.status === 'away'
+                            ? 'warning'
+                            : 'secondary'
                     }
                     variant="dot"
                     anchorOrigin={{
@@ -69,7 +74,9 @@ const ChatContent = ({ toggleChatSidebar }) => {
                   </Badge>
                 </ListItemAvatar>
                 <ListItemText
-                  primary={<Typography variant="h5">{chatDetails.name}</Typography>}
+                  primary={
+                    <Typography variant="h5">{chatDetails.name}</Typography>
+                  }
                   secondary={chatDetails.status}
                 />
               </ListItem>
@@ -119,11 +126,18 @@ const ChatContent = ({ toggleChatSidebar }) => {
                             </ListItemAvatar>
                             <Box>
                               {chat.createdAt ? (
-                                <Typography variant="body2" color="grey.400" mb={1}>
+                                <Typography
+                                  variant="body2"
+                                  color="grey.400"
+                                  mb={1}
+                                >
                                   {chatDetails.name},{' '}
-                                  {formatDistanceToNowStrict(new Date(chat.createdAt), {
-                                    addSuffix: false,
-                                  })}{' '}
+                                  {formatDistanceToNowStrict(
+                                    new Date(chat.createdAt),
+                                    {
+                                      addSuffix: false,
+                                    }
+                                  )}{' '}
                                   ago
                                 </Typography>
                               ) : null}
@@ -148,7 +162,12 @@ const ChatContent = ({ toggleChatSidebar }) => {
                                     lineHeight: '0px',
                                   }}
                                 >
-                                  <Image src={chat.msg} alt="attach" width="150" height="150" />
+                                  <Image
+                                    src={chat.msg}
+                                    alt="attach"
+                                    width="150"
+                                    height="150"
+                                  />
                                 </Box>
                               ) : null}
                             </Box>
@@ -160,12 +179,23 @@ const ChatContent = ({ toggleChatSidebar }) => {
                             alignItems="flex-end"
                             flexDirection="row-reverse"
                           >
-                            <Box alignItems="flex-end" display="flex" flexDirection={'column'}>
+                            <Box
+                              alignItems="flex-end"
+                              display="flex"
+                              flexDirection={'column'}
+                            >
                               {chat.createdAt ? (
-                                <Typography variant="body2" color="grey.400" mb={1}>
-                                  {formatDistanceToNowStrict(new Date(chat.createdAt), {
-                                    addSuffix: false,
-                                  })}{' '}
+                                <Typography
+                                  variant="body2"
+                                  color="grey.400"
+                                  mb={1}
+                                >
+                                  {formatDistanceToNowStrict(
+                                    new Date(chat.createdAt),
+                                    {
+                                      addSuffix: false,
+                                    }
+                                  )}{' '}
                                   ago
                                 </Typography>
                               ) : null}
@@ -183,8 +213,16 @@ const ChatContent = ({ toggleChatSidebar }) => {
                                 </Box>
                               ) : null}
                               {chat.type === 'image' ? (
-                                <Box mb={1} sx={{ overflow: 'hidden', lineHeight: '0px' }}>
-                                  <Image src={chat.msg} alt="attach" width="250" height="165" />
+                                <Box
+                                  mb={1}
+                                  sx={{ overflow: 'hidden', lineHeight: '0px' }}
+                                >
+                                  <Image
+                                    src={chat.msg}
+                                    alt="attach"
+                                    width="250"
+                                    height="165"
+                                  />
                                 </Box>
                               ) : null}
                             </Box>
@@ -202,7 +240,10 @@ const ChatContent = ({ toggleChatSidebar }) => {
             {/* ------------------------------------------- */}
             {open ? (
               <Box flexShrink={0}>
-                <ChatInsideSidebar isInSidebar={lgUp ? open : !open} chat={chatDetails} />
+                <ChatInsideSidebar
+                  isInSidebar={lgUp ? open : !open}
+                  chat={chatDetails}
+                />
               </Box>
             ) : (
               ''

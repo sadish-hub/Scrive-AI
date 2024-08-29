@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import { AppDispatch } from '../../store';
 import { uniqueId } from 'lodash';
 import { sub } from 'date-fns';
-import {ChatData} from '@/app/api/chat/ChatData';
+import { ChatData } from '@/app/api/chat/ChatData';
 
 const API_URL = '/api/data/chat/ChatData';
 
@@ -51,7 +51,7 @@ export const ChatSlice = createSlice({
               ...chat,
               ...chat.messages.push(newMessage),
             }
-          : chat,
+          : chat
       );
     },
   },

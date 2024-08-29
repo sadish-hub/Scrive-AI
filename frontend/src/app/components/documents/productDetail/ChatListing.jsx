@@ -15,7 +15,11 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import { useSelector, useDispatch } from 'react-redux';
 import Scrollbar from '../../custom-scroll/Scrollbar';
-import { SelectChat, fetchChats, SearchChat } from '@/store/apps/chats/ChatSlice';
+import {
+  SelectChat,
+  fetchChats,
+  SearchChat,
+} from '@/store/apps/chats/ChatSlice';
 import { last } from 'lodash';
 import { formatDistanceToNowStrict } from 'date-fns';
 import { IconChevronDown, IconSearch } from '@tabler/icons-react';
@@ -30,13 +34,15 @@ const ChatListing = () => {
 
   const filterChats = (chats, cSearch) => {
     if (chats)
-      return chats.filter((t) => t.name.toLocaleLowerCase().includes(cSearch.toLocaleLowerCase()));
+      return chats.filter((t) =>
+        t.name.toLocaleLowerCase().includes(cSearch.toLocaleLowerCase())
+      );
 
     return chats;
   };
 
   const chats = useSelector((state) =>
-    filterChats(state.chatReducer.chats, state.chatReducer.chatSearch),
+    filterChats(state.chatReducer.chats, state.chatReducer.chatSearch)
   );
 
   const getDetails = (conversation) => {
@@ -45,7 +51,8 @@ const ChatListing = () => {
     const lastMessage = conversation.messages[conversation.messages.length - 1];
     if (lastMessage) {
       const sender = lastMessage.senderId === conversation.id ? 'You: ' : '';
-      const message = lastMessage.type === 'image' ? 'Sent a photo' : lastMessage.msg;
+      const message =
+        lastMessage.type === 'image' ? 'Sent a photo' : lastMessage.msg;
       displayText = `${sender}${message}`;
     }
 
@@ -178,7 +185,11 @@ const ChatListing = () => {
                     }}
                     overlap="circular"
                   >
-                    <Avatar alt="Remy Sharp" src={chat.thumb} sx={{ width: 42, height: 42 }} />
+                    <Avatar
+                      alt="Remy Sharp"
+                      src={chat.thumb}
+                      sx={{ width: 42, height: 42 }}
+                    />
                   </Badge>
                 </ListItemAvatar>
                 <ListItemText

@@ -13,7 +13,7 @@ export const store = configureStore({
   reducer: {
     customizer: persistReducer(persistConfig, CustomizerReducer),
     documentReducer: DocumentReducer,
-    chatReducer: ChatsReducer
+    chatReducer: ChatsReducer,
   },
   devTools: process.env.NODE_ENV !== 'production',
   middleware: (getDefaultMiddleware) =>
