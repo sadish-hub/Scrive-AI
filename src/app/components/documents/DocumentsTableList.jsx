@@ -24,7 +24,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchProducts } from '@/store/apps/documents/DocumentsSlice';
 // import CustomCheckbox from '../../../forms/theme-elements/CustomCheckbox';
 // import CustomSwitch from '../../../forms/theme-elements/CustomSwitch';
-import { IconDotsVertical, IconFilter, IconSearch, IconTrash } from '@tabler/icons-react';
+import {
+  IconDotsVertical,
+  IconFilter,
+  IconSearch,
+  IconTrash,
+} from '@tabler/icons-react';
 import CustomCheckbox from '../forms/theme-elements/CustomCheckbox';
 import CustomSwitch from '../forms/theme-elements/CustomSwitch';
 
@@ -94,7 +99,14 @@ const headCells = [
 ];
 
 function EnhancedTableHead(props) {
-  const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
+  const {
+    onSelectAllClick,
+    order,
+    orderBy,
+    numSelected,
+    rowCount,
+    onRequestSort,
+  } = props;
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
@@ -148,12 +160,20 @@ const EnhancedTableToolbar = (props) => {
         pr: { xs: 1, sm: 1 },
         ...(numSelected > 0 && {
           bgcolor: (theme) =>
-            alpha(theme.palette.primary.main, theme.palette.action.activatedOpacity),
+            alpha(
+              theme.palette.primary.main,
+              theme.palette.action.activatedOpacity
+            ),
         }),
       }}
     >
       {numSelected > 0 ? (
-        <Typography sx={{ flex: '1 1 100%' }} color="inherit" variant="subtitle2" component="div">
+        <Typography
+          sx={{ flex: '1 1 100%' }}
+          color="inherit"
+          variant="subtitle2"
+          component="div"
+        >
           {numSelected} selected
         </Typography>
       ) : (
@@ -207,7 +227,7 @@ const ProductTableList = () => {
   }, [dispatch]);
 
   const getProducts = useSelector((state) => state.documentReducer.products);
-  console.log({getProducts})
+  console.log({ getProducts });
   const [rows, setRows] = React.useState(getProducts);
   const [search, setSearch] = React.useState('');
 
@@ -255,7 +275,7 @@ const ProductTableList = () => {
     } else if (selectedIndex > 0) {
       newSelected = newSelected.concat(
         selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1),
+        selected.slice(selectedIndex + 1)
       );
     }
 
@@ -278,7 +298,8 @@ const ProductTableList = () => {
   const isSelected = (name) => selected.indexOf(name) !== -1;
 
   // Avoid a layout jump when reaching the last page with empty rows.
-  const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+  const emptyRows =
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
   const theme = useTheme();
   const borderColor = theme.palette.divider;
@@ -291,7 +312,10 @@ const ProductTableList = () => {
           search={search}
           handleSearch={(event) => handleSearch(event)}
         />
-        <Paper variant="outlined" sx={{ mx: 2, mt: 1, border: `1px solid ${borderColor}` }}>
+        <Paper
+          variant="outlined"
+          sx={{ mx: 2, mt: 1, border: `1px solid ${borderColor}` }}
+        >
           <TableContainer>
             <Table
               sx={{ minWidth: 750 }}
@@ -335,7 +359,11 @@ const ProductTableList = () => {
 
                         <TableCell>
                           <Box display="flex" alignItems="center">
-                            <Avatar src={row.photo} alt="product" sx={{ width: 56, height: 56 }} />
+                            <Avatar
+                              src={row.photo}
+                              alt="product"
+                              sx={{ width: 56, height: 56 }}
+                            />
                             <Box
                               sx={{
                                 ml: 2,
@@ -344,14 +372,19 @@ const ProductTableList = () => {
                               <Typography variant="h6" fontWeight="600">
                                 {row.title}
                               </Typography>
-                              <Typography color="textSecondary" variant="subtitle2">
+                              <Typography
+                                color="textSecondary"
+                                variant="subtitle2"
+                              >
                                 {row.category}
                               </Typography>
                             </Box>
                           </Box>
                         </TableCell>
                         <TableCell>
-                          <Typography>{format(new Date(row.created), 'E, MMM d yyyy')}</Typography>
+                          <Typography>
+                            {format(new Date(row.created), 'E, MMM d yyyy')}
+                          </Typography>
                         </TableCell>
 
                         <TableCell>

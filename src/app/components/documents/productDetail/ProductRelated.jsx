@@ -29,7 +29,7 @@ const ProductRelated = () => {
 
   // Get Products
   const Relatedproducts = useSelector((state) =>
-    filterRelatedProduct(state.documentReducer.products),
+    filterRelatedProduct(state.documentReducer.products)
   );
 
   // skeleton
@@ -50,12 +50,23 @@ const ProductRelated = () => {
       </Typography>
       <Grid container spacing={3}>
         {Relatedproducts.map((product) => (
-          <Grid item xs={12} lg={3} sm={4} display="flex" alignItems="stretch" key={product.title}>
+          <Grid
+            item
+            xs={12}
+            lg={3}
+            sm={4}
+            display="flex"
+            alignItems="stretch"
+            key={product.title}
+          >
             {/* ------------------------------------------- */}
             {/* Product Card */}
             {/* ------------------------------------------- */}
             <BlankCard sx={{ p: 0 }} className="hoverCard">
-              <Typography component={Link} href={`/apps/ecommerce/detail/${product.id}`}>
+              <Typography
+                component={Link}
+                href={`/apps/ecommerce/detail/${product.id}`}
+              >
                 {isLoading ? (
                   <Skeleton
                     variant="rectangular"
@@ -75,14 +86,28 @@ const ProductRelated = () => {
               </Typography>
               <CardContent sx={{ p: 3, pt: 2 }}>
                 <Typography fontWeight={600}>{product.title}</Typography>
-                <Stack direction="row" alignItems="center" justifyContent="space-between" mt={1}>
+                <Stack
+                  direction="row"
+                  alignItems="center"
+                  justifyContent="space-between"
+                  mt={1}
+                >
                   <Stack direction="row" alignItems="center">
                     <Typography variant="h5">${product.price}</Typography>
-                    <Typography color={'GrayText'} ml={1} sx={{ textDecoration: 'line-through' }}>
+                    <Typography
+                      color={'GrayText'}
+                      ml={1}
+                      sx={{ textDecoration: 'line-through' }}
+                    >
                       ${product.salesPrice}
                     </Typography>
                   </Stack>
-                  <Rating name="read-only" size="small" value={product.rating} readOnly />
+                  <Rating
+                    name="read-only"
+                    size="small"
+                    value={product.rating}
+                    readOnly
+                  />
                 </Stack>
               </CardContent>
             </BlankCard>

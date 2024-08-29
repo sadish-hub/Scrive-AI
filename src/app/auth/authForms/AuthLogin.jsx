@@ -5,22 +5,20 @@ import Divider from '@mui/material/Divider';
 import FormControlLabel from '@mui/material/FormControlLabel';
 import FormGroup from '@mui/material/FormGroup';
 import Stack from '@mui/material/Stack';
-import { TextField, Alert } from '@mui/material'
+import { TextField, Alert } from '@mui/material';
 import Typography from '@mui/material/Typography';
-import Link from "next/link";
-import CustomCheckbox from "@/app/components/forms/theme-elements/CustomCheckbox";
-import CustomFormLabel from "@/app/components/forms/theme-elements/CustomFormLabel";
-import AuthSocialButtons from "./AuthSocialButtons";
+import Link from 'next/link';
+import CustomCheckbox from '@/app/components/forms/theme-elements/CustomCheckbox';
+import CustomFormLabel from '@/app/components/forms/theme-elements/CustomFormLabel';
+import AuthSocialButtons from './AuthSocialButtons';
 import { signIn, useSession } from 'next-auth/react';
-import { redirect } from 'next/navigation'
+import { redirect } from 'next/navigation';
 
 const AuthLogin = ({ title, subtitle, subtext }) => {
   const { data: session } = useSession();
   const [username, setUsername] = useState('admin');
   const [password, setPassword] = useState('admin123');
   const [error, setError] = useState('');
-
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -63,15 +61,28 @@ const AuthLogin = ({ title, subtitle, subtext }) => {
         </Divider>
       </Box>
 
-      {error ? <Box mt={3}><Alert severity='error' >
-        Sign-in error: Username or Password is Wrong
-      </Alert></Box> : ''}
+      {error ? (
+        <Box mt={3}>
+          <Alert severity="error">
+            Sign-in error: Username or Password is Wrong
+          </Alert>
+        </Box>
+      ) : (
+        ''
+      )}
 
       <form onSubmit={handleSubmit}>
         <Stack>
           <Box>
-            <CustomFormLabel htmlFor="username" >Username</CustomFormLabel>
-            <TextField id="username" variant="outlined" error={error !== ''} value={username} fullWidth onChange={(e) => setUsername(e.target.value)} />
+            <CustomFormLabel htmlFor="username">Username</CustomFormLabel>
+            <TextField
+              id="username"
+              variant="outlined"
+              error={error !== ''}
+              value={username}
+              fullWidth
+              onChange={(e) => setUsername(e.target.value)}
+            />
           </Box>
           <Box>
             <CustomFormLabel htmlFor="password">Password</CustomFormLabel>
@@ -102,8 +113,8 @@ const AuthLogin = ({ title, subtitle, subtext }) => {
               href="/"
               fontWeight="500"
               sx={{
-                textDecoration: "none",
-                color: "primary.main",
+                textDecoration: 'none',
+                color: 'primary.main',
               }}
             >
               Forgot Password ?
@@ -124,7 +135,7 @@ const AuthLogin = ({ title, subtitle, subtext }) => {
       </form>
       {subtitle}
     </>
-  )
+  );
 };
 
 export default AuthLogin;

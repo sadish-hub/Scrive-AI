@@ -1,13 +1,11 @@
-import React from "react";
-import dynamic from "next/dynamic";
-const Chart = dynamic(() => import("react-apexcharts"), { ssr: false });
-import { useTheme } from "@mui/material/styles";
-import { Typography, Box } from "@mui/material";
+import React from 'react';
+import dynamic from 'next/dynamic';
+const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
+import { useTheme } from '@mui/material/styles';
+import { Typography, Box } from '@mui/material';
 
-
-import SkeletonExpenceCard from "@/app/components/sketeton/ExpenseCard";
-import DashboardCard from "./DashboardCard";
-
+import SkeletonExpenceCard from '@/app/components/sketeton/ExpenseCard';
+import DashboardCard from './DashboardCard';
 
 const Expence = ({ isLoading }) => {
   // chart color
@@ -19,7 +17,7 @@ const Expence = ({ isLoading }) => {
   // chart
   const optionsexpencechart = {
     chart: {
-      type: "donut",
+      type: 'donut',
       fontFamily: "'Montserrat', sans-serif;",
 
       toolbar: {
@@ -27,13 +25,13 @@ const Expence = ({ isLoading }) => {
       },
       height: 120,
     },
-    labels: ["Profit", "Revenue", "Expance"],
+    labels: ['Profit', 'Revenue', 'Expance'],
     colors: [primary, error, secondary],
     plotOptions: {
       pie: {
         donut: {
-          size: "70%",
-          background: "transparent",
+          size: '70%',
+          background: 'transparent',
         },
       },
     },
@@ -47,7 +45,7 @@ const Expence = ({ isLoading }) => {
       show: false,
     },
     tooltip: {
-      theme: theme.palette.mode === "dark" ? "dark" : "light",
+      theme: theme.palette.mode === 'dark' ? 'dark' : 'light',
       fillSeriesColor: false,
     },
   };
@@ -70,7 +68,7 @@ const Expence = ({ isLoading }) => {
                 series={seriesexpencechart}
                 type="donut"
                 height="120px"
-                width={"100%"}
+                width={'100%'}
               />
             </Box>
           </>

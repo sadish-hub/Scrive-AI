@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-
 const initialState = {
   activeDir: 'ltr',
   activeMode: 'light', // This can be light or dark

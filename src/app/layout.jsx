@@ -1,14 +1,12 @@
-
-import React from "react";
-import { Providers } from "@/store/providers";
+import React from 'react';
+import { Providers } from '@/store/providers';
 import MyApp from './app';
-import "./global.css";
-
+import './global.css';
 
 export const metadata = {
   title: 'Scrive’s AI Hackathon',
   description: 'Scrive’s AI Hackathon in Stockholm',
-}
+};
 
 export default function RootLayout({ children }) {
   return (
@@ -21,5 +19,3 @@ export default function RootLayout({ children }) {
     </html>
   );
 }
-
-

@@ -9,8 +9,8 @@ import {
   IconMoodSmile,
   IconAperture,
   IconShoppingCart,
-  IconCertificate
-
+  IconCertificate,
+  IconBasket,
 } from '@tabler/icons-react';
 
 const Menuitems = [
@@ -28,10 +28,18 @@ const Menuitems = [
   },
   {
     id: uniqueId(),
-    title: "Documents",
-    icon:IconCertificate,
-    href: "/documents",
-  }
+    title: 'Documents',
+    icon: IconCertificate,
+    href: '/documents/',
+    children: [
+      {
+        id: uniqueId(),
+        title: 'Detail',
+        icon: IconPoint,
+        href: '/documents/detail/1',
+      },
+    ],
+  },
 ];
 
 export default Menuitems;

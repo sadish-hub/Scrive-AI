@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { persistReducer, persistStore } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import CustomizerReducer from './customizer/CustomizerSlice';
-import DocumentReducer from './apps/documents/DocumentsSlice'
+import DocumentReducer from './apps/documents/DocumentsSlice';
 
 const persistConfig = {
   key: 'root',
@@ -11,7 +11,7 @@ const persistConfig = {
 export const store = configureStore({
   reducer: {
     customizer: persistReducer(persistConfig, CustomizerReducer),
-    documentReducer: DocumentReducer
+    documentReducer: DocumentReducer,
   },
   devTools: process.env.NODE_ENV !== 'production',
   middleware: (getDefaultMiddleware) =>

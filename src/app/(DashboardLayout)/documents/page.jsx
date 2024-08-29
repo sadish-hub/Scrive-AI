@@ -4,7 +4,6 @@ import PageContainer from '@/app/components/container/PageContainer';
 import ProductTableList from '@/app/components/documents/DocumentsTableList';
 import BlankCard from '@/app/components/sketeton/BlankCard';
 
-
 const BCrumb = [
   {
     to: '/',

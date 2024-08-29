@@ -6,14 +6,15 @@ import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { useSelector } from 'react-redux';
 import { IconPower } from '@tabler/icons-react';
-import { useSession, signOut } from "next-auth/react"
-
+import { useSession, signOut } from 'next-auth/react';
 
 export const Profile = () => {
   const customizer = useSelector((state) => state.customizer);
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
-  const hideMenu = lgUp ? customizer.isCollapse && !customizer.isSidebarHover : '';
-  const { data: session } = useSession()
+  const hideMenu = lgUp
+    ? customizer.isCollapse && !customizer.isSidebarHover
+    : '';
+  const { data: session } = useSession();
   return (
     <Box
       display={'flex'}
@@ -23,7 +24,11 @@ export const Profile = () => {
     >
       {!hideMenu ? (
         <>
-          <Avatar alt="Remy Sharp" src={"/images/profile/user-1.jpg"} sx={{ height: 40, width: 40 }} />
+          <Avatar
+            alt="Remy Sharp"
+            src={'/images/profile/user-1.jpg'}
+            sx={{ height: 40, width: 40 }}
+          />
 
           <Box>
             <Typography variant="h6">{session.user.name}</Typography>
@@ -33,7 +38,6 @@ export const Profile = () => {
             <Tooltip title="Logout" placement="top">
               <IconButton
                 color="primary"
-
                 onClick={() => signOut()}
                 aria-label="logout"
                 size="small"

@@ -87,9 +87,10 @@ const components = (theme) => {
             backgroundPosition: ' 0% 50%',
           },
         },
-        '.rounded-bars .apexcharts-bar-series.apexcharts-plot-series .apexcharts-series path': {
-          clipPath: 'inset(0 0 5% 0 round 20px)',
-        },
+        '.rounded-bars .apexcharts-bar-series.apexcharts-plot-series .apexcharts-series path':
+          {
+            clipPath: 'inset(0 0 5% 0 round 20px)',
+          },
       },
     },
     MuiButtonGroup: {
@@ -361,7 +362,9 @@ const components = (theme) => {
         root: {
           '& .MuiOutlinedInput-notchedOutline': {
             borderColor:
-              theme.palette.mode === 'dark' ? theme.palette.grey[200] : theme.palette.grey[300],
+              theme.palette.mode === 'dark'
+                ? theme.palette.grey[200]
+                : theme.palette.grey[300],
           },
           '&:hover .MuiOutlinedInput-notchedOutline': {
             borderColor: theme.palette.grey[300],
@@ -400,7 +403,8 @@ const components = (theme) => {
     MuiPopover: {
       styleOverrides: {
         paper: {
-          boxShadow: 'rgb(145 158 171 / 30%) 0px 0px 2px 0px, rgb(145 158 171 / 12%) 0px 12px 24px -4px'
+          boxShadow:
+            'rgb(145 158 171 / 30%) 0px 0px 2px 0px, rgb(145 158 171 / 12%) 0px 12px 24px -4px',
         },
       },
     },

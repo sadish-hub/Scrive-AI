@@ -16,9 +16,11 @@ import Typography from '@mui/material/Typography';
 import { useTheme } from '@mui/material/styles';
 
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchProducts, addToCart } from '@/store/apps/documents/DocumentsSlice';
+import {
+  fetchProducts,
+  addToCart,
+} from '@/store/apps/documents/DocumentsSlice';
 import { IconCheck, IconMinus, IconPlus } from '@tabler/icons-react';
-
 
 const ProductDetail = () => {
   const theme = useTheme();
@@ -33,7 +35,9 @@ const ProductDetail = () => {
   }, [dispatch]);
 
   // Get Products
-  const product = useSelector((state) => state.documentReducer.products[getTitle - 1]);
+  const product = useSelector(
+    (state) => state.documentReducer.products[getTitle - 1]
+  );
 
   /// select colors on click
   const [scolor, setScolor] = useState(product ? product.colors[0] : '');
@@ -66,7 +70,12 @@ const ProductDetail = () => {
             {/* Badge and category */}
             {/* ------------------------------------------- */}
             <Chip label="In Stock" color="success" size="small" />
-            <Typography color="textSecondary" variant="caption" ml={1} textTransform="capitalize">
+            <Typography
+              color="textSecondary"
+              variant="caption"
+              ml={1}
+              textTransform="capitalize"
+            >
               {product?.category}
             </Typography>
           </Box>
@@ -76,9 +85,13 @@ const ProductDetail = () => {
           <Typography fontWeight="600" variant="h4" mt={1}>
             {product?.title}
           </Typography>
-          <Typography variant="subtitle2" mt={1} color={theme.palette.text.secondary}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ex arcu, tincidunt bibendum
-            felis.
+          <Typography
+            variant="subtitle2"
+            mt={1}
+            color={theme.palette.text.secondary}
+          >
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ex
+            arcu, tincidunt bibendum felis.
           </Typography>
           {/* ------------------------------------------- */}
           {/* Price */}
@@ -97,7 +110,12 @@ const ProductDetail = () => {
           {/* Ratings */}
           {/* ------------------------------------------- */}
           <Stack direction={'row'} alignItems="center" gap="10px" mt={2} pb={3}>
-            <Rating name="simple-controlled" size="small" value={product.rating} readOnly />
+            <Rating
+              name="simple-controlled"
+              size="small"
+              value={product.rating}
+              readOnly
+            />
             <Link href="/" color="inherit">
               (236 reviews)
             </Link>
@@ -140,8 +158,15 @@ const ProductDetail = () => {
               QTY:
             </Typography>
             <Box>
-              <ButtonGroup size="small" color="secondary" aria-label="small button group">
-                <Button key="one" onClick={() => setCount(count < 2 ? count : count - 1)}>
+              <ButtonGroup
+                size="small"
+                color="secondary"
+                aria-label="small button group"
+              >
+                <Button
+                  key="one"
+                  onClick={() => setCount(count < 2 ? count : count - 1)}
+                >
                   <IconMinus size="1.1rem" />
                 </Button>
                 <Button key="two">{count}</Button>

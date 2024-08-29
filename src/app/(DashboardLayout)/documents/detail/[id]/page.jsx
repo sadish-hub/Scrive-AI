@@ -1,5 +1,5 @@
 'use client';
-import Grid from '@mui/material/Grid'
+import Grid from '@mui/material/Grid';
 
 import Breadcrumb from '@/app/(DashboardLayout)/layout/shared/breadcrumb/Breadcrumb';
 import PageContainer from '@/app/components/container/PageContainer';
@@ -14,10 +14,9 @@ import ProductRelated from '@/app/components/documents/productDetail/ProductRela
 import ChildCard from '@/app/components/shared/ChildCard';
 import ProductDetail from '@/app/components/documents/productDetail/ProductDetail';
 
-
 const BCrumb = [
   {
-    to: '/', 
+    to: '/',
     title: 'Home',
   },
   {
@@ -30,25 +29,31 @@ const BCrumb = [
 ];
 
 const EcommerceDetail = () => {
-  console.log("Adhoc");
+  console.log('Adhoc');
   return (
-    <PageContainer title="Documents Detail" description="this is eCommerce Detail">
+    <PageContainer
+      title="Documents Detail"
+      description="this is eCommerce Detail"
+    >
       {/* breadcrumb */}
       <Breadcrumb title="Product Detail" items={BCrumb} />
-      <Grid container spacing={3} sx={{ maxWidth: { lg: '1055px', xl: '1200px' } }}>
+      <Grid
+        container
+        spacing={3}
+        sx={{ maxWidth: { lg: '1055px', xl: '1200px' } }}
+      >
         <Grid item xs={12} sm={12} lg={12}>
           <ChildCard>
             {/* ------------------------------------------- */}
             {/* Carousel */}
             {/* ------------------------------------------- */}
             <Grid container spacing={3}>
-             
               <Grid item xs={12} sm={12} lg={6}>
                 <ProductDetail />
               </Grid>
             </Grid>
           </ChildCard>
-        </Grid> 
+        </Grid>
         <Grid item xs={12} sm={12} lg={12}>
           <ProductDesc />
         </Grid>
@@ -60,4 +65,4 @@ const EcommerceDetail = () => {
   );
 };
 
-export default EcommerceDetail
+export default EcommerceDetail;
