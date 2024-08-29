@@ -36,7 +36,7 @@ const Menuitems = [
         id: uniqueId(),
         title: 'All Documents',
         icon: IconPoint,
-        href: '/documents/',
+        href: '/documents/list',
       },
       {
         id: uniqueId(),
