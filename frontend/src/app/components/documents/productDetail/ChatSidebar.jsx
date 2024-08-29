@@ -8,19 +8,21 @@ const ChatSidebar = ({ isMobileSidebarOpen, onSidebarClose }) => {
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
 
   return (
-    <Drawer
-      open={isMobileSidebarOpen}
-      onClose={onSidebarClose}
-      variant={lgUp ? 'permanent' : 'temporary'}
-      sx={{
-        width: drawerWidth,
-        flexShrink: 0,
-        zIndex: lgUp ? 0 : 1,
-        [`& .MuiDrawer-paper`]: { position: 'relative' },
-      }}
-    >
-      <ChatListing />
-    </Drawer>
+    <div style={{ display: 'none' }}>
+      <Drawer
+        open={isMobileSidebarOpen}
+        onClose={onSidebarClose}
+        variant={lgUp ? 'permanent' : 'temporary'}
+        sx={{
+          width: drawerWidth,
+          flexShrink: 0,
+          zIndex: lgUp ? 0 : 1,
+          [`& .MuiDrawer-paper`]: { position: 'relative' },
+        }}
+      >
+        <ChatListing />
+      </Drawer>
+    </div>
   );
 };
 

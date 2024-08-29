@@ -71,7 +71,7 @@ const ChatListing = () => {
   };
 
   return (
-    <div>
+    <Box>
       {/* ------------------------------------------- */}
       {/* Profile */}
       {/* ------------------------------------------- */}
@@ -93,9 +93,9 @@ const ChatListing = () => {
         </Badge>
         <Box>
           <Typography variant="body1" fontWeight={600}>
-            Mathew Anderson
+            Hackathon Admin
           </Typography>
-          <Typography variant="body2">Designer</Typography>
+          <Typography variant="body2">Admin</Typography>
         </Box>
       </Box>
       {/* ------------------------------------------- */}
@@ -123,31 +123,6 @@ const ChatListing = () => {
       {/* Contact List */}
       {/* ------------------------------------------- */}
       <List sx={{ px: 0 }}>
-        <Box px={2.5} pb={1}>
-          <Button
-            id="basic-button"
-            aria-controls={open ? 'basic-menu' : undefined}
-            aria-haspopup="true"
-            aria-expanded={open ? 'true' : undefined}
-            onClick={handleClick}
-            color="inherit"
-          >
-            Recent Chats <IconChevronDown size="16" />
-          </Button>
-          <Menu
-            id="basic-menu"
-            anchorEl={anchorEl}
-            open={open}
-            onClose={handleClose}
-            MenuListProps={{
-              'aria-labelledby': 'basic-button',
-            }}
-          >
-            <MenuItem onClick={handleClose}>Sort By Time</MenuItem>
-            <MenuItem onClick={handleClose}>Sort By Unread</MenuItem>
-            <MenuItem onClick={handleClose}>Mark as all Read</MenuItem>
-          </Menu>
-        </Box>
         <Scrollbar
           sx={{
             height: { lg: 'calc(100vh - 100px)', md: '100vh' },
@@ -222,7 +197,7 @@ const ChatListing = () => {
           )}
         </Scrollbar>
       </List>
-    </div>
+    </Box>
   );
 };
 

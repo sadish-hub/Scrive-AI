@@ -34,7 +34,6 @@ const BCrumb = [
 ];
 
 const EcommerceDetail = () => {
-  console.log('Adhoc');
   const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   return (
     <PageContainer
