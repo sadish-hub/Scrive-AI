@@ -28,8 +28,9 @@ const Logo = () => {
             src="/images/logos/LogoWhite.png"
             alt="logo"
             height={customizer.TopbarHeight}
-            width={90}
+            width={customizer.isCollapse ? 40 : 90}
             priority
+            className="w-[40px] sm:w-[60px] md:w-[80px] lg:w-[100px] xl:w-[120px] 2xl:w-[160px]"
           />
         )}
       </LinkStyled>

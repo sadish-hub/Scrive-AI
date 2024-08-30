@@ -1,2 +1,6 @@
-API_KEY = 'your_scrive_api_key'
-BASE_URL = 'https://scrive.com/api/v2/'
+API_TOKEN = 'efeffc939410a37d_7823'
+API_SECRET = '27234ebc2b4f7c6b'
+ACCESS_TOKEN = '09d443d0ab7b3207_32735'
+ACCESS_SECRET = 'abdc5c388fabb054'
+SCRIVE_API_BASE_URL = 'https://api-testbed.scrive.com/api/v2'
+OPENAI_API = ''

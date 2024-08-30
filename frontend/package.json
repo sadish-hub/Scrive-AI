@@ -44,9 +44,11 @@
   },
   "devDependencies": {
     "eslint": "latest",
-    "prettier": "latest",
     "eslint-config-next": "latest",
+    "@types/react-pdf": "latest",
+    "raw-loader":"latest",
     "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-prettier": "^5.2.1"
+    "eslint-plugin-prettier": "^5.2.1",
+    "prettier": "latest"
   }
 }

@@ -1,0 +1,12 @@
+Flask>=2.2.0
+Werkzeug>=2.2.0
+requests==2.32.3
+openai==1.43.0
+flask-cors==3.0.10
+PyMuPDF==1.24.9
+couchbase==4.3
+langchain==0.2.8
+langchain-community==0.2.7
+langchain-couchbase==0.0.1
+langchain-openai==0.1.16
+scikit-learn==1.5.1

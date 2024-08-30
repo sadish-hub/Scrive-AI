@@ -6,11 +6,13 @@ import Grid from '@mui/material/Grid';
 import IconButton from '@mui/material/IconButton';
 import Stack from '@mui/material/Stack';
 import { Theme } from '@mui/material/styles';
+import dynamic from 'next/dynamic';
 import Typography from '@mui/material/Typography';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { styled } from '@mui/material/styles';
 import { uniq, flatten } from 'lodash';
 import { IconDownload } from '@tabler/icons-react';
+
 
 const drawerWidth = 320;
 
